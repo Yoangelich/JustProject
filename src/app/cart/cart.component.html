@@ -1,0 +1,57 @@
+<nav >
+  <div class="contact-logo">
+    <img class="zoomer" src="/assets/images/download.png" alt="">
+   <a  class="a-link" href="#footer"> <div class="contact"> Contact </div></a>
+ </div>
+ <!-- სერჩი -->
+ <div class="search">
+  <input type="text" [(ngModel)]="src" placeholder="Search products">
+  <button class="search-prods" (click)="search()">Search</button>
+  <button class="clear-prods" (click)="clearSearch()">Clear</button>
+</div>
+<!-- კატეგორიის მიხედვით არჩევა-->
+<div class="category"  >
+  <label for="category">Choose Categories  </label><br>
+  <select id="category" [(ngModel)]="selectedCategory" (change)="filter()">
+    <option value="">All</option>
+    <option *ngFor="let category of categories" >{{ category }}</option>
+  </select>
+  
+</div>
+<a routerLink="/cart"><img class="imgs" src="assets/images/shoppingcart.png"  ></a>
+</nav>
+<div class="cart">
+  <h2>Shopping Cart</h2>
+  <div *ngIf="cart.length === 0">
+    <p>Your cart is empty</p>
+  </div>
+  <ul>
+    <li *ngFor="let item of cart; let i = index">
+      <div class="img-title">
+        <span class="item-title">{{ item.title }}</span><br>
+      <img [src]="item.thumbnail" [alt]="item.title" class="thumbnail"><br>
+      <span class="span-price">{{ calculateTotalPrice(item) | currency }}</span> 
+    </div>
+
+    <div class="price-quantity-remove">
+      <div class="plus-minus">
+        <button class="add-up" (click)="AddUp(item)">-</button>
+        <span>{{ item.quantity }}</span>
+        <button class="add-down" (click)="AddDown(item)">+</button>
+      </div>
+      
+      <img class="trash-can" src="/assets/images/trash.webp" (click)="removeFromCart(item)">
+    </div>
+    </li>
+  </ul>
+  <div class="two-div">
+    <button class="btn-go-back-to-shopping" routerLink="">Go Back To Shopping</button>
+    <button class="btn-checkout" (click)="buyNow()">Checkout</button>
+  </div>
+</div>
+<style>
+  .imgs{
+    height: 40px;
+  }
+
+</style>

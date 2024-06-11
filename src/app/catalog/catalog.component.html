@@ -1,0 +1,81 @@
+<!--  ნავბარი -->
+<nav >
+  <div class="contact-logo">
+    <img class="zoomer" src="/assets/images/download.png" alt="">
+   <a  class="a-link" href="#footer"> <div class="contact"> Contact </div></a>
+ </div>
+ <!-- სერჩი -->
+ <div class="search">
+  <input type="text" [(ngModel)]="src" placeholder="Search products">
+  <button class="search-prods" (click)="search()">Search</button>
+  <button class="clear-prods" (click)="clearSearch()">Clear</button>
+</div>
+<!-- კატეგორიის მიხედვით არჩევა-->
+<div class="category"  >
+  <label for="category">Choose Categories  </label><br>
+  <select id="category" [(ngModel)]="selectedCategory" (change)="filter()">
+    <option value="">All</option>
+    <option *ngFor="let category of categories" >{{ category }}</option>
+  </select>
+</div>
+<a routerLink="/cart"><img class="imgs" src="assets/images/shoppingcart.png"  ></a>
+  
+</nav>
+<h1 class="prodh">Products That Are In Stock Right Now</h1>
+<!--  ჩამონათვალი -->
+<div class="catalog">
+  <div class="search">
+  </div>
+ 
+  <ul class="ul">
+    <li *ngFor="let item of filteredProds">
+      <div class="imgbox">
+        <a [routerLink]="['/product', item.id]">
+          <img [src]="item.thumbnail" [alt]="item.title">
+        </a>
+      </div>
+      <div class="namebox">{{ item.title }}</div>
+      <div class="descbox">{{ item.category }}</div>
+      <div class="pricebox">{{ item.price + '$' }}</div>
+      <div class="btn" (click)="Basket(item)">Add To Basket</div>
+    </li>
+  </ul>
+</div>
+<!-- ფუტერი -->
+<footer class="footer" id="footer" *ngIf="!searchActive">
+  <div class="footerdiv1">
+    <h2>Navigation</h2>
+    <ul class="second-ul">
+        <li>About Us</li>
+        <li>Basic Information</li>
+        <li>Carrier</li>
+     
+    </ul>
+</div>
+<div class="footerdiv1">
+  <h2>Payment</h2>
+  <ul class="second-ul">
+      <li>Payment Methods</li>
+      <li>Guarantee</li>
+      <li>Tutorial For Paying</li>
+   
+  </ul>
+</div>
+<div class="footerdiv1">
+  <h2>Follow Us On</h2>
+  <ul class="second-ul">
+    <li><img class="fb" src="/assets/images/images.jpg" alt=""> Instagram</li>
+     
+      <li><img class="fb" src="/assets/images/fb.png" alt=""> Facebook</li>
+
+      <li><img class="fb" src="/assets/images/X.webp" alt=""> Twitter / X</li>
+
+  </ul>
+</div>
+</footer>
+
+<style>
+  .imgs{
+   height: 40px;
+  }
+ </style>

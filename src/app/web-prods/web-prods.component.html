@@ -1,0 +1,45 @@
+<nav >
+  <div class="contact-logo">
+    <img class="zoomer" src="/assets/images/download.png" alt="">
+   <a  class="a-link" href="#footer"> <div class="contact"> Contact </div></a>
+ </div>
+ <!-- სერჩი -->
+ <div class="search">
+  <input type="text" [(ngModel)]="src" placeholder="Search products">
+  <button class="search-prods" (click)="search()">Search</button>
+  <button class="clear-prods" (click)="clearSearch()">Clear</button>
+</div>
+<!-- კატეგორიის მიხედვით არჩევა-->
+<div class="category"  >
+  <label for="category">Choose Categories  </label><br>
+  <select id="category" [(ngModel)]="selectedCategory" (change)="filter()">
+    <option value="">All</option>
+    <option *ngFor="let category of categories" >{{ category }}</option>
+  </select>
+</div>
+<a routerLink="/cart"><img class="imgs" src="assets/images/shoppingcart.png"  ></a>
+  
+</nav>
+
+<div class="product-container" *ngIf="product">
+  <h1 class="product-title">{{ product.title }}</h1>
+  <div class="productdetails-container">
+    <img class="sigma" [src]="product.thumbnail" [alt]="product.title">
+    <div class="title-container">
+      <h2 class="product-details">Category: {{ product.category }}</h2>
+      <h2 class="price">Price Of The Product: {{ product.price + '$' }}</h2>
+      <h2 class="prodh2">Product Is In Stock Right Now</h2>
+      <div class="line-container"></div>
+      <div class="buttons-container">
+      <a class="a-go-back-to-shopping" routerLink="">Go Back To Shopping</a>
+      <div class="btn" (click)="addToCart(product)">Add To Basket</div>
+    </div>
+    </div>
+  </div>
+</div>
+<style>
+  .imgs{
+    height: 45px;
+  }
+</style>
+
