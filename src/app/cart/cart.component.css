@@ -236,17 +236,6 @@
       justify-content: space-evenly;
     }
     
-    .ul li {
-      flex: 30%;
-      box-sizing: border-box;
-      padding: 10px;
-      margin: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      text-align: center;
-      max-width: 200px;
-      margin-top: 100px;
-    }
     
     .imgbox img {
       max-width: 100%;
@@ -281,9 +270,7 @@
       background-color: rgb(255, 255, 255);
     }
     
-    .thumbnail {
-      height: 180px;
-    }
+   
   
     a{
       height: 30px;
@@ -299,18 +286,7 @@
     .imgs{
       height: 100px;
     }
-    
-    .footer {
-      background-color: #f8f8f8;
-      padding: 20px 0;
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-      border-top: 1px solid #e7e7e7;
-      width: 100%;
-      position: relative;
-      bottom: -200px;
-  }
+  
   .second-ul{
     list-style: none;
   }
