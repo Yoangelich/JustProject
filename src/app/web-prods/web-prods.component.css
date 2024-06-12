@@ -6,7 +6,9 @@ nav {
   background-color: #f1f1f1;
 
 }
-
+a{
+  text-decoration: none;
+}
 .fir1 {
   display: flex;
   align-items: center;
@@ -30,26 +32,33 @@ justify-content: center;
 align-items: center;
 
 }
-.contact{
-width: 130px;
-background-color: #ff6600;
-border-radius: 10px;
-display: flex;
-justify-content: center;
-align-items: center;
-color: black;
-height: 40px;
-gap: 100px;
-cursor: pointer;
-
+.contact, .contact-contact{
+  width: 130px;
+  background-color: #ff6600;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  height: 40px;
+  gap: 100px;
+  cursor: pointer;
+  
 }
-
+  
 .contact:active{
-transform: scale(0.8);
-transition: 0.15s;
-border: 3px solid #ff6600;
-background-color: rgb(255, 255, 255);
-
+  transform: scale(0.8);
+  transition: 0.15s;
+  border: 3px solid #ff6600;
+  background-color: rgb(255, 255, 255);
+  
+}
+.contact-contact:active{
+  transform: scale(0.8);
+  transition: 0.15s;
+  border: 3px solid #ff6600;
+  background-color: rgb(255, 255, 255);
+  
 }
 
 .fir1 img {
@@ -283,7 +292,8 @@ background-color: rgb(255, 255, 255);
     text-align: center;
   }
 }
-@media only screen and (max-width: 550px){
+
+@media only screen and (max-width: 715px){
   nav{
    height: 150px;
   }
@@ -306,7 +316,7 @@ background-color: rgb(255, 255, 255);
  }
  }
  
- @media only screen and (max-width: 411px){
+ @media only screen and (max-width: 566px){
    
    .category{
     position: relative;
@@ -314,7 +324,7 @@ background-color: rgb(255, 255, 255);
     top: -10px;
    }
   }
-  @media only screen and (max-width: 360px){
+  @media only screen and (max-width: 516px){
    
    .category{
     position: relative;
@@ -326,9 +336,36 @@ background-color: rgb(255, 255, 255);
    }
   }
  
-  @media only screen and (max-width: 320px){
+  @media only screen and (max-width: 487px){
    
    .category{
     display: none;
   }
+  .search{
+    left: -300px;
   }
+  }
+  @media only screen and (max-width: 401px){
+   
+    .category{
+     display: none;
+   }
+   .search{
+     left: -300px;
+   }
+   .contact-logo{
+    gap: 0;
+   }
+   
+   }
+   @media only screen and (max-width: 362px){
+   
+    .contact{
+      display: none;
+    }
+    .search{
+      left: -160px;
+    }
+   
+   }
+ 

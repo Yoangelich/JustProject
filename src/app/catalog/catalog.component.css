@@ -35,9 +35,11 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px
+  ;
   
 }
-.contact{
+.contact, .contact-contact{
   width: 130px;
   background-color: #ff6600;
   border-radius: 10px;
@@ -52,6 +54,13 @@ nav {
 }
   
 .contact:active{
+  transform: scale(0.8);
+  transition: 0.15s;
+  border: 3px solid #ff6600;
+  background-color: rgb(255, 255, 255);
+  
+}
+.contact-contact:active{
   transform: scale(0.8);
   transition: 0.15s;
   border: 3px solid #ff6600;
@@ -193,6 +202,9 @@ nav {
   position: relative;
   left: 10px;
 }
+a{
+  text-decoration: none;
+}
 .clear-prods:active{
   transform: scale(0.8);
   transition: 0.15s;
@@ -200,55 +212,80 @@ nav {
   background-color: rgb(255, 255, 255);
 }
 
-@media only screen and (max-width: 550px){
- nav{
-  height: 150px;
- }
- .category{
-  position: relative;
-  left: -100px;
- }
- .imgs{
-  margin-top: 60px;
-  position: absolute;
-  left: 0;
- }
- .search{
-  position: relative;
-  left: -140px;
-  margin-top: 70px;
-}
-.prodh{
-  margin-top: 100px;
-}
-}
-
-@media only screen and (max-width: 411px){
-  
+@media only screen and (max-width: 715px){
+  nav{
+   height: 150px;
+  }
   .category{
    position: relative;
-   left: -150px;
-   top: -10px;
+   left: -100px;
   }
- }
- @media only screen and (max-width: 360px){
-  
-  .category{
+  .imgs{
+   margin-top: 60px;
+   position: absolute;
+   left: 0;
+  }
+  .search{
    position: relative;
-   left: -180px;
-   top: -10px;
+   left: -140px;
+   margin-top: 70px;
+ }
+ .prodh{
+   margin-top: 100px;
+ }
+ }
+ 
+ @media only screen and (max-width: 566px){
+   
+   .category{
+    position: relative;
+    left: -150px;
+    top: -10px;
+   }
   }
-  .footer{
-    display: block;
+  @media only screen and (max-width: 516px){
+   
+   .category{
+    position: relative;
+    left: -180px;
+    top: -10px;
+   }
+   .footer{
+     display: block;
+   }
   }
- }
-
- @media only screen and (max-width: 320px){
-  
-  .category{
-   display: none;
- }
- }
-
-
+ 
+  @media only screen and (max-width: 487px){
+   
+   .category{
+    display: none;
+  }
+  .search{
+    left: -300px;
+  }
+  }
+  @media only screen and (max-width: 401px){
+   
+    .category{
+     display: none;
+   }
+   .search{
+     left: -300px;
+   }
+   .contact-logo{
+    gap: 0;
+   }
+   
+   }
+   @media only screen and (max-width: 362px){
+   
+    .contact{
+      display: none;
+    }
+    .search{
+      left: -160px;
+    }
+   
+   }
+ 
 
