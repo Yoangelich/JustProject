@@ -190,7 +190,10 @@
     ;
     
   }
-  .contact, .contact-contact{
+  a{
+    text-decoration: none;
+  }
+  .contact, .contact-contact , .remove-btn{
     width: 130px;
     background-color: #ff6600;
     border-radius: 10px;
